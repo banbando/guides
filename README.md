@@ -23,7 +23,8 @@
 + [複数セレクタを指定する場合は、１つのセレクタに１行ずつ書く](#複数セレクタを指定する場合は１つのセレクタに１行ずつ書く)
 + [3回同じスタイルを使用した場合、コンポーネント化](#3回同じスタイルを使用した場合コンポーネント化)
 
-## 参考サイト
+## 参考
++ [Web制作者のためのCSS設計の教科書](http://book.impress.co.jp/books/1113101128)
 + [メンテナブルCSS](https://www.cyberagent.co.jp/techinfo/techreport/report/id=7926)
 + [airbnbのCSSスタイルガイドを読んで一部訳してみた](http://nerd.hatenadiary.jp/entry/2015/08/31/204820)
 + [Airbnb CSS / Sass Styleguide](https://github.com/airbnb/css)
