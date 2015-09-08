@@ -24,7 +24,7 @@
 + [3回同じスタイルを使用した場合、コンポーネント化](#3回同じスタイルを使用した場合コンポーネント化)
 
 ## 参考サイト
-+ [メンテナブルCSS](https://www.cyberagent.co.jp/techinfo/techreport/report/id=7926#section10)
++ [メンテナブルCSS](https://www.cyberagent.co.jp/techinfo/techreport/report/id=7926)
 + [airbnbのCSSスタイルガイドを読んで一部訳してみた](http://nerd.hatenadiary.jp/entry/2015/08/31/204820)
 + [Airbnb CSS / Sass Styleguide](https://github.com/airbnb/css)
 + [thoughtbotのsassスタイルガイドを和訳してみた](http://nerd.hatenadiary.jp/entry/2015/08/28/205801)
