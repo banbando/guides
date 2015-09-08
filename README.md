@@ -2,26 +2,26 @@
 
 ## 記述ルール
 
-+ SCSSで記述する
-+ 文字コードはUTF-8
-+ インデントはスペース2つ分
-+ ネストは3～5階層まで
-+ 用途がわかるようにコメントをつける
-+ クラスセレクタでスタイルをつくる
-+ クラス名に接頭辞をつける
-+ 継承はアンダースコア、複合語をつなぐのはキャメルケース
-+ クラス名はわかりやすい名前にする
-+ IDセレクタは使用しない（JSは例外とするが、可能な限り使わない）
-+ プロパティはなるべく短くまとめる
-+ カラーコードは可能であれば3桁で書く
-+ タグに依存したセレクタを書かない
-+ プロパティの記述順序を統一する
-+ プロパティ名のコロンの後（バリュー）にスペースをいれる
-+ セレクタと{のあいだに半角スペースをひとつ空ける
-+ 0のあとに単位は書かない
-+ extendは先頭に記述する
-+ 複数セレクタを指定する場合は、１つのセレクタに１行ずつ書く
-+ 3回同じスタイルを使用した場合、コンポーネント化
++ [SCSSで記述する](https://github.com/banbando/guides-css#SCSSで記述する)
++ [文字コードはUTF-8](https://github.com/banbando/guides-css#文字コードはUTF)
++ [インデントはスペース2つ分](https://github.com/banbando/guides-css#インデントはスペース2つ分)
++ [ネストは3～5階層まで](https://github.com/banbando/guides-css#ネストは3～5階層まで)
++ [用途がわかるようにコメントをつける](https://github.com/banbando/guides-css#用途がわかるようにコメントをつける)
++ [クラスセレクタでスタイルをつくる](https://github.com/banbando/guides-css#クラスセレクタでスタイルをつくる)
++ [クラス名に接頭辞をつける](https://github.com/banbando/guides-css#クラス名に接頭辞をつける)
++ [継承はアンダースコア、複合語をつなぐのはキャメルケース](https://github.com/banbando/guides-css#継承はアンダースコア、複合語をつなぐのはキャメルケース)
++ [クラス名はわかりやすい名前にする](https://github.com/banbando/guides-css#クラス名はわかりやすい名前にする)
++ [IDセレクタは使用しない（JSは例外とするが、可能な限り使わない）](https://github.com/banbando/guides-css#IDセレクタは使用しない（JSは例外とするが、可能な限り使わない）)
++ [プロパティはなるべく短くまとめる](https://github.com/banbando/guides-css#プロパティはなるべく短くまとめる)
++ [カラーコードは可能であれば3桁で書く](https://github.com/banbando/guides-css#カラーコードは可能であれば3桁で書く)
++ [タグに依存したセレクタを書かない](https://github.com/banbando/guides-css#タグに依存したセレクタを書かない)
++ [プロパティの記述順序を統一する](https://github.com/banbando/guides-css#プロパティの記述順序を統一する)
++ [プロパティ名のコロンの後（バリュー）にスペースをいれる](https://github.com/banbando/guides-css#プロパティ名のコロンの後（バリュー）にスペースをいれる)
++ [セレクタと{のあいだに半角スペースをひとつ空ける](https://github.com/banbando/guides-css#セレクタと{のあいだに半角スペースをひとつ空ける)
++ [0のあとに単位は書かない](https://github.com/banbando/guides-css#0のあとに単位は書かない)
++ [extendは先頭に記述する](https://github.com/banbando/guides-css#extendは先頭に記述する)
++ [複数セレクタを指定する場合は、１つのセレクタに１行ずつ書く](https://github.com/banbando/guides-css#複数セレクタを指定する場合は、１つのセレクタに１行ずつ書く)
++ [3回同じスタイルを使用した場合、コンポーネント化](https://github.com/banbando/guides-css#3回同じスタイルを使用した場合、コンポーネント化)
 
 
 ### SCSSで記述する
@@ -190,3 +190,4 @@ extend を記述する場合は、どのプロパティよりも先頭に記述�
 ### 3回同じスタイルを使用した場合、コンポーネント化
 Rule of three に則って、3回同じスタイルを使用した場合はコンポーネント化します。  
 ですが、はじめから再利用を目的に書く必要はありません。
+
