@@ -54,10 +54,10 @@ CSSさえ書いたことがあれば参入しやすいのがメリットです�
   .text {
     font-size: 14px;
     line-height: 1.5;
-  }
-  .link {
-    color: #069;
-    text-decoration: none;
+    .link {
+      color: #069;
+      text-decoration: none;
+    }
   }
 }
 ```
