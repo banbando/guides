@@ -1,0 +1,116 @@
+@charset "UTF-8";
+@import "filename";
+
+/*
+### CSS Information
+
+File name:      sample.scss
+Created:        2015-09-09
+Style Info:     contents name
+
+
+
+
+
+## Table of Contents
+
++ ruleset                  書き方のルール
+
+### 汎用CSS
++ `u_commonbutton`         ボタン
++ `u_commonTitle`                タイトル
++ `u_linkText`             リンクテキスト
+
+
+# ruleset  書き方のルール
+
++ 基本はガイドラインの原則に沿って書くこと
++ mixinは(style_mixin.scss)に記述すること
++ クラスを流用する際はextendを使用すること
++ Sassの入れ子は、なるべく少ない階層でおさえること
+
+
+*単位*
++ 基本的に(rem)特にフォントサイズは(rem)で統一する
++ 他は(%)などを適宜使用すること
++ 小数点が入る場合は(0)をとること
+ex:(0.5rem) は(.5rem)とする
+
+
+*プロパティの表示順序*
+1.@extend
+2.ポジショニング
+3.ボックスモデル
+4.その他の宣言
+
+※@includeなどは適用されるスタイルに沿って配置
+
+*/
+
+
+
+
+
+/*
+# u_commonButton
+
+基本の角丸ボタンです。
+ユーザーがアクションを起こす場合はこのボタンを使いましょう。
+例）ログインする、投稿する、予約する場合など
+*/
+
+.u_commonbutton {
+  padding: 10px;
+  .button {
+    display: block;
+    padding: 10px 5px;
+    @import border-radius(4px);
+    border-bottom: #0076ac;
+    background: #0098de;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+/*
+# u_commonTitle
+
+基本のタイトルです。
+おもに施設名称で使用しています。
+*/
+
+.u_commonTitle {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  .text {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+
+
+
+
+/*
+# u_linkText
+
+基本のリンクスタイルです。
+_blank時にはアイコンが出るようになっています。
+*/
+
+.u_linkText {
+  color: #0076ac;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+  &[target="_blank"] {
+    padding-right: 20px;
+    background: url("image.png") no-repeat right center;
+  }
+}
