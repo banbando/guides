@@ -24,6 +24,7 @@
 + [複数セレクタを指定する場合は、１つのセレクタに１行ずつ書く](#複数セレクタを指定する場合は１つのセレクタに１行ずつ書く)
 + [3回同じスタイルを使用した場合、コンポーネント化](#3回同じスタイルを使用した場合コンポーネント化)
 + [まとまったスタイルごとにコメントタイトルをつけて5行あける](#まとまったスタイルごとにコメントタイトルをつけて5行あける)
++ [数値はremを使用する](#数値はremを使用する)
 
 ## 参考
 + [Web制作者のためのCSS設計の教科書](http://book.impress.co.jp/books/1113101128)
@@ -268,3 +269,115 @@ Rule of three に則って、3回同じスタイルを使用した場合はコ�
 }
 ```
 
+
+### 数値はremを使用する
+将来的にpxという単位が良いのか悩ましいところで、実験的にremを採用しています。  
+そこでSassの便利機能でpxで記述できるようにしています。  
+書き方は下記のとおりです。  
+
+正直むずかしいところで、フォントサイズだけrem採用するのが良いのかなとも思います。  
+pxのが慣れているし、デザインを作るときはそちらの数値で作りますし  
+レスポンシブのメディアクエリとか限定的に使ったほうがいいかもしれません。
+
+参考サイト
+https://github.com/geckotang/cssnite-lp32/blob/master/scss/_rem.scss
+
+```css
+/*
+# `pxToRem`  pxをremに変換するmixin
+
+@include rem();()内にプロパティを設定する
+ex1: @include rem(margin, 10 15);
+ex2: @include rem(border, 1 solid #bcbcbc);
+*/
+
+//基準となるフォントサイズ
+$basePx: 16;
+$rem-root-font-size:$basePx !default;
+//レガシーブラウザ用にpxを出力するかしないか
+$rem-legacy-support: false !default;
+
+//@function parseInt
+//@param $n {String} 数値に変換したい文字列
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+//@function rem
+//@description 単位なしの数値・もしくはpxならremに変換、
+//remの場合はpxに変換(remに対応してないブラウザ向け)
+//@param $value {Number} 数値
+
+@function rem($value) {
+  $root: $rem-root-font-size;
+  $val: parseInt($value);
+  $unit: unit($value);
+  $result: "";
+
+  @if $unit == "px" or unitless($value) {
+    $result: ($val / $root + 0rem);
+  }
+  @if $unit == "rem" {
+    $result: ($val * $root + 0px);
+  }
+
+  @return $result;
+}
+
+//@mixin rem
+//@description 単位なしの数値・もしくはpxならremに変換、
+//remの場合はpxに変換(remに対応してないブラウザ向け)
+//@param $property {String} プロパティ名
+//@param $values {Number} 数値（複数可）
+//@usage:
+//.list{
+//  =rem('font-size', 16px); //*font-size:1.6rem; font-size: 16px;
+//  =rem('margin', 10px auto 10px);
+//margin: 1rem auto 1rem; margin: 10px auto 10px;
+//}
+@mixin rem($property, $values) {
+  $px : ();
+  $rem: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else if type-of($value) == number {
+      $unit: unit($value);
+      $val: parseInt($value);
+
+      @if unitless($value) {
+        $unit: "px";
+        $value: $value * 1px;
+      }
+
+      @if $unit == "px" {
+        $px : append($px,  $value);
+        $rem: append($rem, rem($value));
+      }
+
+      @if $unit == "rem" {
+        $px : append($px,  rem($value));
+        $rem: append($rem, $value);
+      }
+    }
+
+    @else {
+      $px : append($px,  $value);
+      $rem: append($rem, $value);
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    @if $rem-legacy-support == true {
+      #{$property}: $px;
+    }
+    #{$property}: $rem;
+  }
+}
+```
