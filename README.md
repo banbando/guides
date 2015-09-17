@@ -1,6 +1,10 @@
 
 # CSSスタイルガイド
 
+なるべくこうした方が良いよ、というルールなので厳格に守る必要はありません。  
+念頭において状況に応じてCSSを書いて行きましょう。
+
+
 ## 記述ルール
 
 *基本ルール*
@@ -31,6 +35,7 @@
 + [まとまったスタイルごとにコメントタイトルをつけて5行あける](#まとまったスタイルごとにコメントタイトルをつけて5行あける)
 + [数値はremを使用する](#数値はremを使用する)
 
+
 ## 参考
 + [Web制作者のためのCSS設計の教科書](http://book.impress.co.jp/books/1113101128)
 + [メンテナブルCSS](https://www.cyberagent.co.jp/techinfo/techreport/report/id=7926)
@@ -39,10 +44,6 @@
 + [thoughtbotのsassスタイルガイドを和訳してみた](http://nerd.hatenadiary.jp/entry/2015/08/28/205801)
 + [thoughtbot/guides Sass](https://github.com/thoughtbot/guides/tree/master/style/sass)
 + [CSS Nite LP32の「コピペで使える！変数とmixin！」](https://github.com/geckotang/cssnite-lp32)
-
-なるべくこうした方が良いよ、というルールなので  
-厳格に守る必要はありません。  
-念頭において状況に応じてCSSを書いて行きましょう。
 
 
 ### SCSSで記述する
